@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wardrop Optimizer</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/182/182355.png">
+  </head>
+  <body>
+    <nav
+      class="navbar navbar-expand-md bg-body-dark mb-3"
+      data-bs-theme="dark"
+      id="navbarcustom"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="Today[HOME].html" id="logo">WO</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="Today[HOME].html"
+                style="text-align: center"
+                >Today</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shirts.html" style="text-align: center"
+                >Shirts</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pants.html" style="text-align: center"
+                >Pants</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shoes.html" style="text-align: center"
+                >Shoes</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="addnew.html" style="text-align: center"
+                >Add New</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="calendar.html"
+                style="text-align: center"
+                >Calendar</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="random.html" style="text-align: center"
+                >Random</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="feddback.html"
+                style="text-align: center"
+                >Feedback</a
+              >
+            </li>
+          </ul>
+          <div class="row">
+            <a
+              href="signup.html"
+              class="btn btn-primary"
+              role="button"
+              id="login"
+              >Sign Up/Log In</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col text-center">
+          <p class="h1">Welcome [FIRST NAME OF USER]!</p>
+          <p>Ready to get started? Tell us what you are wearing today!</p>
+          <p>Today's Date: [Current Date]</p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-7 text-center">
+          <hr class="text-danger">
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-6 text-center">
+          <span>What shirt did you wear today?</span>
+          <div class="input-group">
+            <i class="fas fas fa-tshirt fa-2xl me-3"></i>
+            <select class="form-select mb-3">
+              <option selected>Select One</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-6 text-center">
+          <span>What pants did you wear today?</span>
+          <div class="input-group">
+            <i class="fas fas fa-tshirt fa-2xl me-3"></i>
+            <select class="form-select mb-3">
+              <option selected>Select One</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-6 text-center">
+          <span>What shoes did you wear today?</span>
+          <div class="input-group">
+            <i class="fas fa-shoe-prints fa-2xl me-3"></i>
+            <select class="form-select mb-3">
+              <option selected>Select One</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-6 text-center">
+          <span>Where are you headed?</span>
+          <div class="input-group">
+            <i class="fas fa-shoe-prints fa-2xl me-3"></i>
+            <select class="form-select mb-3">
+              <option selected>Select One</option>
+              <option value="1">Work</option>
+              <option value="2">School</option>
+              <option value="3">Errands</option>
+              <option value="4">Going Out</option>
+              <option value="5">Exercise</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-6 text-center">
+          <span>Where are you headed?</span>
+          <div class="input-group">
+            <i class="fa-regular fa-circle-check fa-2xl me-3"></i>
+            <button type="button" class="btn btn-primary w-75">Lock In!</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-3">
+        <div class="col-6 text-center">
+          <a href="addnew.html">Add more items to your virtual closet?</a>
+        </div>
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <div class="container-fluid">
+      <h1 style="text-align: center">Welcome [FIRST NAME OF USER]!</h1>
+      <p style="text-align: center">
+        Ready to get started? Tell us what you are wearing today!
+      </p>
+      <p style="text-align: center">Today's Date: [Current Date]</p>
+    </div>
+    <!--Shirt Button-->
+    <p style="text-align: center">What shirt did you wear today?</p>
+    <div class="container-fluid" id="container">
+      <div class="row">
+        <i class="fas fa-tshirt" style="color: #000000" id="shirt"></i>
+        <select
+          class="form-select mb-3"
+          aria-label="Default select example"
+          id="select-variant1"
+        >
+          <option selected>Select One</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+    </div>
+    <!--Pants Button-->
+    <p style="text-align: center">What pants did you wear today?</p>
+    <div class="container-fluid" id="container">
+      <div class="row">
+        <?xml version="1.0" encoding="UTF-8"?><svg
+          width="75"
+          height="65"
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="col-lg-6"
+          id="pants"
+        >
+          <path
+            d="M6 36L8.00001 12H40L42 36H26.8421L24 25L21.1579 36H6Z"
+            fill="none"
+            stroke="#333"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M24 12L27 19"
+            stroke="#333"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M24 12L20 19.5"
+            stroke="#333"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M18 12H30"
+            stroke="#333"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        <select
+          class="form-select mb-3"
+          aria-label="Default select example"
+          id="select-variant2"
+        >
+          <option selected>Select One</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+    </div>
+    <!--Shoes Button-->
+    <p style="text-align: center">What shoes did you wear today?</p>
+    <div class="container-fluid" id="container">
+      <div class="row">
+        <i class="fas fa-shoe-prints" style="color: #000000" id="shoes"></i>
+        <select
+          class="form-select mb-3"
+          aria-label="Default select example"
+          id="select-variant3"
+        >
+          <option selected>Select One</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+      </div>
+    </div>
+    <!--Where Button-->
+    <p style="text-align: center">Where are you headed?</p>
+    <div class="container-fluid" id="container">
+      <div class="row">
+        <i class="fas fa-person-running" style="color: #000000" id="shoes"></i>
+        <select
+          class="form-select mb-3"
+          aria-label="Default select example"
+          id="select-variant3"
+        >
+          <option selected>Select One</option>
+          <option value="1">Work</option>
+          <option value="2">School</option>
+          <option value="3">Errands</option>
+          <option value="4">Going Out</option>
+          <option value="5">Exercise</option>
+        </select>
+      </div>
+    </div>
+    <!--Confirm Button-->
+
+    <div class="container-fluid mb-3 mt-4" id="container">
+      <div class="row">
+        <i
+          class="fa-regular fa-circle-check"
+          style="color: #000000"
+          id="shoes"
+        ></i>
+        <a href="#" class="btn btn-primary" role="button" id="confirm"
+          >Lock In!</a
+        >
+      </div>
+    </div>
+
+    <!--Add New Button-->
+    <p style="text-align: center">Adding to your virtual closet?</p>
+    <div class="container-fluid" id="container">
+      <div class="row">
+        <i class="fa-solid fa-plus" style="color: #000000" id="shoes"></i>
+        <a
+          href="addnew.html"
+          class="btn btn-primary"
+          role="button"
+          id="homeAddNewButton"
+          >Add More Here!</a
+        >
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/js/all.min.js"
+      integrity="sha512-naukR7I+Nk6gp7p5TMA4ycgfxaZBJ7MO5iC3Fp6ySQyKFHOGfpkSZkYVWV5R7u7cfAicxanwYQ5D1e17EfJcMA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

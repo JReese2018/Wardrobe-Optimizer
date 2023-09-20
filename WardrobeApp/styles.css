@@ -1,0 +1,256 @@
+#logo{
+    background-color: black;
+    background-image:linear-gradient(to top, #ffffff 0%, #0025f7 100%);
+    background-size: 100%;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 2rem;
+
+}
+
+#navbarcustom{
+    background-color: black;
+    box-shadow: 0 4px 6px #535353;
+}
+
+#login{
+    --bs-btn-color: #ffffffec;
+    --bs-btn-border-color: #ffffff;
+    --bs-btn-bg: #0025f7;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0025f7;
+    --bs-btn-hover-border-color: #fff;
+    --bs-btn-focus-shadow-rgb: 25,135,84;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #2142ff;
+    --bs-btn-active-border-color: #000000;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #8f8f8f;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #8f8f8f;
+    --bs-gradient: none;   
+}
+
+#container{
+    display:flex;
+    justify-content: center;
+}
+
+#loginNoUser{
+    --bs-btn-color: #ffffffec;
+    --bs-btn-border-color: #ffffff;
+    --bs-btn-bg: #0025f7;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0025f7;
+    --bs-btn-hover-border-color: #fff;
+    --bs-btn-focus-shadow-rgb: 25,135,84;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #2142ff;
+    --bs-btn-active-border-color: #000000;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #8f8f8f;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #8f8f8f;
+    --bs-gradient: none;
+    width: 150px;
+}
+
+/*Shirt Selcet Variant*/
+#select-variant1{ 
+    width: 400px;
+    cursor: pointer;
+}
+#shirt{
+    height: 38px;
+    width: 40px;
+    cursor: pointer;
+}
+
+/*Pants Selcet Variant*/
+#select-variant2{ 
+    width: 400px;
+    cursor: pointer;
+}
+
+#pants{
+    height: 45px;
+    width: 70px;
+    cursor: pointer;
+}
+
+/*Shoes Select Variant*/
+#select-variant3{ 
+    width: 400px;
+    cursor: pointer;
+}
+
+#shoes{
+    height: 38px;
+    width: 40px;
+    cursor: pointer;
+}
+
+/*Add New Variant*/
+#homeAddNewButton{ 
+    --bs-btn-color: #ffffffec;
+    --bs-btn-border-color: #ffffff;
+    --bs-btn-bg: #0025f7;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0025f7;
+    --bs-btn-hover-border-color: #fff;
+    --bs-btn-focus-shadow-rgb: 25,135,84;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #2142ff;
+    --bs-btn-active-border-color: #000000;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #8f8f8f;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #8f8f8f;
+    --bs-gradient: none; 
+    width: 250px;
+    cursor: pointer;
+}
+
+#shoes{
+    height: 38px;
+    width: 40px;
+    cursor: pointer;
+}
+
+/*Edit Button*/
+#edit{
+    
+    --bs-btn-color: #ffffffec;
+    --bs-btn-border-color: #ffffff;
+    --bs-btn-bg: #0025f7;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0025f7;
+    --bs-btn-hover-border-color: #fff;
+    --bs-btn-focus-shadow-rgb: 25,135,84;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #2142ff;
+    --bs-btn-active-border-color: #000000;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #8f8f8f;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #8f8f8f;
+    --bs-gradient: none; width: 100px;
+    cursor: pointer;
+}
+
+/*Confirm Button*/
+#confirm{
+    --bs-btn-color: #ffffffec;
+    --bs-btn-border-color: #ffffff;
+    --bs-btn-bg: #0025f7;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0025f7;
+    --bs-btn-hover-border-color: #fff;
+    --bs-btn-focus-shadow-rgb: 25,135,84;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #2142ff;
+    --bs-btn-active-border-color: #000000;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #8f8f8f;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #8f8f8f;
+    --bs-gradient: none; 
+    width: 400px;
+    cursor: pointer;
+}
+
+/*Add New Icons*/
+#addNewShirt{
+    height:200px
+}
+#addNewPants{
+    height:200px;
+    width: 200px
+}
+#addNewShoes{
+    height:200px;
+}
+
+/*Add New on "Add New" Page*/
+#addNew{
+    --bs-btn-color: #ffffffec;
+    --bs-btn-border-color: #ffffff;
+    --bs-btn-bg: #0025f7;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0025f7;
+    --bs-btn-hover-border-color: #fff;
+    --bs-btn-focus-shadow-rgb: 25,135,84;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #2142ff;
+    --bs-btn-active-border-color: #000000;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #8f8f8f;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #8f8f8f;
+    --bs-gradient: none; 
+}
+
+#randomButton{
+    --bs-btn-color: #ffffffec;
+    --bs-btn-border-color: #ffffff;
+    --bs-btn-bg: #0025f7;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0025f7;
+    --bs-btn-hover-border-color: #fff;
+    --bs-btn-focus-shadow-rgb: 25,135,84;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #2142ff;
+    --bs-btn-active-border-color: #000000;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #8f8f8f;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #8f8f8f;
+    --bs-gradient: none; 
+    width: 250px;
+    margin: auto;
+}
+
+#randomButtonCalender{
+    --bs-btn-color: #ffffffec;
+    --bs-btn-border-color: #ffffff;
+    --bs-btn-bg: #0025f7;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0025f7;
+    --bs-btn-hover-border-color: #fff;
+    --bs-btn-focus-shadow-rgb: 25,135,84;
+    --bs-btn-active-color: #fff;
+    --bs-btn-active-bg: #2142ff;
+    --bs-btn-active-border-color: #000000;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    --bs-btn-disabled-color: #8f8f8f;
+    --bs-btn-disabled-bg: transparent;
+    --bs-btn-disabled-border-color: #8f8f8f;
+    --bs-gradient: none; 
+    width: 175px;
+    margin: auto;
+}
+
+#signupCard{
+    width: 500px;
+    display:flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Hover Dropdown as shown in text.html file*/
+/*https://mdbootstrap.com/docs/standard/extended/dropdown-hover/*/
+/*.dropdown:hover>.dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown>.dropdown-toggle:active {
+      pointer-events: none;
+  }*/
