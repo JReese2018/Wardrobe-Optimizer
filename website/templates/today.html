@@ -1,0 +1,153 @@
+<!--Add Nav Bar-->
+{% extends "base.html"%} 
+<!--Change Title of Page-->
+{% block title %}Welcome, <!--User First Name--> • Wardrobe Optimizer{% endblock %}
+<!--Add Content-->
+{%block content%} 
+
+<div class="container-fluid">
+    <h1 style="text-align: center">Welcome [FIRST NAME OF USER]!</h1>
+    <p style="text-align: center">
+      Ready to get started? Tell us what you are wearing today!
+    </p>
+    <p style="text-align: center">Today's Date: [Current Date]</p>
+  </div>
+  <!--Shirt Button-->
+  <p style="text-align: center">What shirt did you wear today?</p>
+  <div class="container-fluid" id="container">
+    <div class="row">
+      <i class="fas fa-tshirt" style="color: #000000" id="shirt"></i>
+      <select
+        class="form-select mb-3"
+        aria-label="Default select example"
+        id="select-variant1"
+      >
+        <option selected>Select One</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+  </div>
+  <!--Pants Button-->
+  <p style="text-align: center">What pants did you wear today?</p>
+  <div class="container-fluid" id="container">
+    <div class="row">
+      <?xml version="1.0" encoding="UTF-8"?><svg
+        width="75"
+        height="65"
+        viewBox="0 0 48 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        class="col-lg-6"
+        id="pants"
+      >
+        <path
+          d="M6 36L8.00001 12H40L42 36H26.8421L24 25L21.1579 36H6Z"
+          fill="none"
+          stroke="#333"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M24 12L27 19"
+          stroke="#333"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M24 12L20 19.5"
+          stroke="#333"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M18 12H30"
+          stroke="#333"
+          stroke-width="1"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+      <select
+        class="form-select mb-3"
+        aria-label="Default select example"
+        id="select-variant2"
+      >
+        <option selected>Select One</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+  </div>
+  <!--Shoes Button-->
+  <p style="text-align: center">What shoes did you wear today?</p>
+  <div class="container-fluid" id="container">
+    <div class="row">
+      <i class="fas fa-shoe-prints" style="color: #000000" id="shoes"></i>
+      <select
+        class="form-select mb-3"
+        aria-label="Default select example"
+        id="select-variant3"
+      >
+        <option selected>Select One</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </div>
+  </div>
+  <!--Where Button-->
+  <p style="text-align: center">Where are you headed?</p>
+  <div class="container-fluid" id="container">
+    <div class="row">
+      <i class="fas fa-person-running" style="color: #000000" id="shoes"></i>
+      <select
+        class="form-select mb-3"
+        aria-label="Default select example"
+        id="select-variant3"
+      >
+        <option selected>Select One</option>
+        <option value="1">Work</option>
+        <option value="2">School</option>
+        <option value="3">Errands</option>
+        <option value="4">Going Out</option>
+        <option value="5">Exercise</option>
+      </select>
+    </div>
+  </div>
+  <!--Confirm Button-->
+
+  <div class="container-fluid mb-3 mt-4" id="container">
+    <div class="row">
+      <i
+        class="fa-regular fa-circle-check"
+        style="color: #000000"
+        id="shoes"
+      ></i>
+      <a href="#" class="btn btn-primary" role="button" id="confirm"
+        >Lock In!</a
+      >
+    </div>
+  </div>
+
+  <!--Add New Button-->
+  <p style="text-align: center">Adding to your virtual closet?</p>
+  <div class="container-fluid" id="container">
+    <div class="row">
+      <i class="fa-solid fa-plus" style="color: #000000" id="shoes"></i>
+      <a
+        href="addnew.html"
+        class="btn btn-primary"
+        role="button"
+        id="homeAddNewButton"
+        >Add More Here!</a
+      >
+    </div>
+  </div>
+
+  {% endblock %}
