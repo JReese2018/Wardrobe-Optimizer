@@ -28,6 +28,21 @@ def calendar():
 def addnew():
     return render_template("addnew.html", user=current_user)
 
+@views.route('/addnewpants')
+@login_required
+def addnewpants():
+    return render_template("addNewPants.html", user=current_user)
+
+@views.route('/addnewshirt')
+@login_required
+def addnewshirt():
+    return render_template("addNewShirt.html", user=current_user)
+
+@views.route('/addnewshoes')
+@login_required
+def addnewshoes():
+    return render_template("addNewShoes.html", user=current_user)
+
 @views.route('/shirts')
 @login_required
 def shirts():
@@ -46,4 +61,3 @@ def shoes():
 @views.route('/feedback')
 def feedback():
     return render_template("feedback.html", user=current_user)
-

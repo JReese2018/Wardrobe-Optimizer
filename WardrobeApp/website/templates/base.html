@@ -21,13 +21,59 @@
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/182/182355.png">  
   </head>
   <body>
-    {% if user.is_authenticated %}
+    
     <nav
       class="navbar navbar-expand-md bg-body-dark mb-3"
       data-bs-theme="dark"
       id="navbarcustom"
     >
-
+    {% if user.is_authenticated %}
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/today" id="logo">WO</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/today" style="text-align: center">Today</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/random" style="text-align: center">Random</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/calendar" style="text-align: center">Calendar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/addnew" style="text-align: center">Add New</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/shirts" style="text-align: center">Shirts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/pants" style="text-align: center">Pants</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/shoes" style="text-align: center">Shoes</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/feedback" style="text-align: center">Feedback</a>
+            </li>
+          </ul>
+          <div class="row" id="loginButton">
+            <a href="/logout" class="btn btn-primary" role="button" id="login">Logout</a>
+          </div>
+        </div>
+      </div>
+      {% else %}
       <div class="container-fluid">
         <a class="navbar-brand" href="/" id="logo">WO</a>
         <button
@@ -44,71 +90,26 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a
-                class="nav-link"
-                aria-current="page"
-                href="/"
-                style="text-align: center"
-                >Today</a
-              >
+              <a class="nav-link" aria-current="page" href="/" style="text-align: center">Today</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/random" style="text-align: center"
-                >Random</a
-              >
+              <a class="nav-link" href="/random" style="text-align: center">Random</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link"
-                href="/calendar"
-                style="text-align: center"
-                >Calendar</a
-              >
+              <a class="nav-link" href="/calendar" style="text-align: center">Calendar</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/addnew" style="text-align: center"
-                >Add New</a
-              >
+              <a class="nav-link" href="/addnew" style="text-align: center">Add New</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/shirts" style="text-align: center"
-                >Shirts</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/pants" style="text-align: center"
-                >Pants</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/shoes" style="text-align: center"
-                >Shoes</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="/feedback"
-                style="text-align: center"
-                >Feedback</a
-              >
+              <a class="nav-link" href="/feedback" style="text-align: center">Feedback</a>
             </li>
           </ul>
-          <!--Deciding if I want to keep a sign/login Button. I'm not sure how to change to the User's name after they login since it is on the base-->
-          <!--Will likely have to use the block syntax with Django in order to change but we will cross that bridge when we get there-->
           <div class="row" id="loginButton">
-            <a
-              href="/sign-up"
-              class="btn btn-primary"
-              role="button"
-              id="login"
-              >Sign Up/Log In</a
-            >
+            <a href="/sign-up" class="btn btn-primary" role="button" id="login">Sign Up/Log In</a>
           </div>  
         </div>
       </div>
-      {% else %}
-
       {% endif %}
 
     </nav>

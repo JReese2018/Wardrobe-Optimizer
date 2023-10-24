@@ -6,7 +6,7 @@
 {%block content%} 
 
 <div class="container-fluid">
-    <div class="card">
+    <div class="card mt-5">
       <p style="text-align: center" class="mt-4"><strong>Adding New Pants</strong></p>
       <?xml version="1.0" encoding="UTF-8"?><svg width="75" height="65" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" class="col-lg-6" id="addNewPants" style="margin:auto"><path d="M6 36L8.00001 12H40L42 36H26.8421L24 25L21.1579 36H6Z" fill="none" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 12L27 19" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M24 12L20 19.5" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 12H30" stroke="#333" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>
       <div class="card-body">
@@ -30,6 +30,31 @@
              <!--figure out how to add the options from the database to this option--> 
             </select>
           </div>
+          <div>
+            <label for="goingTo" class="form-label">Where would you wear this? (Can not be changed)</label>
+              <div class="form-group">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Work
+                </label>
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  School
+                </label>
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Errands
+                </label>
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Going Out
+                </label>
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  Exercise
+                </label>
+              </div>
+            </div>
         </div>
         <div class="container-fluid" id="container">
           <button href="#" class="btn" role="button" id="addNew">Add Pants</button>
@@ -37,3 +62,4 @@
       </div>
     </div>
   </div>
+  {% endblock %}
