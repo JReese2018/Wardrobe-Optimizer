@@ -1,16 +1,16 @@
 <!--Add Nav Bar-->
 {% extends "base.html"%} 
 <!--Change Title of Page-->
-{% block title %}Welcome, <!--User First Name--> • Wardrobe Optimizer{% endblock %}
+{% block title %}Welcome, {{ user.first_name }} • Wardrobe Optimizer{% endblock %}
 <!--Add Content-->
 {%block content%} 
 
 <div class="container-fluid">
-    <h1 style="text-align: center">Welcome [FIRST NAME OF USER]!</h1>
+    <h1 style="text-align: center">Welcome {{ user.first_name }}!</h1>
     <p style="text-align: center">
       Ready to get started? Tell us what you are wearing today!
     </p>
-    <p style="text-align: center">Today's Date: [Current Date]</p>
+    <p style="text-align: center">Today's Date: {{ date_time }}</p>
   </div>
   <!--Shirt Button-->
   <p style="text-align: center">What shirt did you wear today?</p>

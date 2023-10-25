@@ -3,28 +3,37 @@ from flask_login import UserMixin
 from sqlalchemy.sql import func
 
 class Shirt(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    shirt_id = db.Column(db.Integer, primary_key=True)
     brand = db.Column(db.String(150), nullable=False)
     primary_color = db.Column(db.String(150), nullable=False)
     secondary_color = db.Column(db.String(150), nullable=True)
-    shirt_type = db.Column(db.Integer, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    type = db.Column(db.Integer, nullable=False)
+    times_worn = db.Column(db.Integer, nullable=False)
+    last_time_worn = db.Column(db.String(50), default=func.now())
+    worn_to_most = db.Column(db.String(50))
+    user_id = db.Column(db.Integer)
 
 class Pants(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    pants_id = db.Column(db.Integer, primary_key=True)
     brand = db.Column(db.String(150), nullable=False)
     primary_color = db.Column(db.String(150), nullable=False)
     secondary_color = db.Column(db.String(150), nullable=True)
-    pants_type = db.Column(db.Integer, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    type = db.Column(db.Integer, nullable=False)
+    times_worn = db.Column(db.Integer, nullable=False)
+    last_time_worn = db.Column(db.String(50), default=func.now())
+    worn_to_most = db.Column(db.String(50))
+    user_id = db.Column(db.Integer)
 
 class Shoes(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
+    shoes_id = db.Column(db.Integer, primary_key=True)
     brand = db.Column(db.String(150), nullable=False)
     primary_color = db.Column(db.String(150), nullable=False)
     secondary_color = db.Column(db.String(150), nullable=True)
-    shoes_type = db.Column(db.Integer, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))
+    type = db.Column(db.Integer, nullable=False)
+    times_worn = db.Column(db.Integer, nullable=False)
+    last_time_worn = db.Column(db.String(50), default=func.now())
+    worn_to_most = db.Column(db.String(50))
+    user_id = db.Column(db.Integer)
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
@@ -32,6 +41,3 @@ class User(db.Model, UserMixin):
     last_name = db.Column(db.String(150), nullable=False)
     email = db.Column(db.String(150), unique=True)
     password = db.Column(db.String(150), nullable=False)
-    shirts = db.relationship('Shirt')
-    pants = db.relationship('Pants')
-    shoes = db.relationship('Shoes')

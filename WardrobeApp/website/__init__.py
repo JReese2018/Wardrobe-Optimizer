@@ -2,9 +2,13 @@ from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from os import path
 from flask_login import LoginManager
+from datetime import datetime
 
 db = SQLAlchemy()
-DB_NAME = "WardrobeDatabase"
+DB_NAME = "wardrobedatabase"
+
+now = datetime.now() 
+date_time = now.strftime("%m/%d/%Y")
 
 
 

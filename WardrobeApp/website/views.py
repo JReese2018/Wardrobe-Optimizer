@@ -1,5 +1,8 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, request, redirect, url_for
 from flask_login import login_required, current_user
+from website import date_time
+from .models import Pants
+from . import db
 
 
 views = Blueprint('views', __name__)
@@ -11,7 +14,7 @@ def home():
 @views.route('/today')
 @login_required
 def today():
-    return render_template("today.html", user=current_user)
+    return render_template("today.html", user=current_user, date_time=date_time)
 
 @views.route('/random')
 @login_required
@@ -28,9 +31,24 @@ def calendar():
 def addnew():
     return render_template("addnew.html", user=current_user)
 
-@views.route('/addnewpants')
+@views.route('/addnewpants', methods = ('GET', 'POST'))
 @login_required
 def addnewpants():
+    if request.method == 'POST':
+        brand = request.form['brand']
+        primary_color = request.form['primary_color']
+        secondary_color = request.form['secondary_color']
+        type = request.form['type']
+        times_worn = 0
+        last_time_worn = "N/A"
+        worn_to_most = "N/A"
+        pants = Pants(brand=brand, primary_color=primary_color, secondary_color=secondary_color, type=type)
+        db.session.add(pants)
+        db.session.commit()
+        
+        return redirect(url_for('pants'))
+
+
     return render_template("addNewPants.html", user=current_user)
 
 @views.route('/addnewshirt')
