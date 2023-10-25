@@ -18,11 +18,15 @@ class Pants(db.Model):
     brand = db.Column(db.String(150), nullable=False)
     primary_color = db.Column(db.String(150), nullable=False)
     secondary_color = db.Column(db.String(150), nullable=True)
-    type = db.Column(db.Integer, nullable=False)
+    type = db.Column(db.String(50), nullable=False)
     times_worn = db.Column(db.Integer, nullable=False)
     last_time_worn = db.Column(db.String(50), default=func.now())
     worn_to_most = db.Column(db.String(50))
     user_id = db.Column(db.Integer)
+
+class Pants_Type(db.Model):
+    pants_typeID = db.Column(db.Integer, primary_key=True)
+    type = db.Column(db.String(50))
 
 class Shoes(db.Model):
     shoes_id = db.Column(db.Integer, primary_key=True)
