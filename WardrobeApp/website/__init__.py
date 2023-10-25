@@ -5,7 +5,7 @@ from flask_login import LoginManager
 from datetime import datetime
 
 db = SQLAlchemy()
-DB_NAME = "wardrobedatabase"
+DB_NAME = "wardrobedatabase2"
 
 now = datetime.now() 
 date_time = now.strftime("%m/%d/%Y")

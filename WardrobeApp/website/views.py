@@ -33,7 +33,8 @@ def addnew():
 
 @views.route('/addnewpants', methods = ('GET', 'POST'))
 @login_required
-def addnewpants():    
+def addnewpants():
+    user = User.query.filter_by(id=current_user.id).first()
     if request.method == 'POST':
         brand = request.form['brand']
         primary_color = request.form['primary_color']
@@ -42,12 +43,12 @@ def addnewpants():
         times_worn = 0
         last_time_worn = "N/A"
         worn_to_most = "N/A"
-        user_id = 0 # Find out how to put current user id here
-        pants = Pants(brand=brand, primary_color=primary_color, secondary_color=secondary_color, type=type)
+        user_id = user # Find out how to put current user id here
+        pants = Pants(brand=brand, primary_color=primary_color, secondary_color=secondary_color, type=type, times_worn=times_worn, last_time_worn=last_time_worn, worn_to_most=worn_to_most, user_id=user_id)
         db.session.add(pants)
         db.session.commit()
 
-        return redirect(url_for('pants'))
+        return redirect(url_for('views.pants'))
 
 
     return render_template("addNewPants.html", user=current_user)

@@ -11,7 +11,7 @@ class Shirt(db.Model):
     times_worn = db.Column(db.Integer, nullable=False)
     last_time_worn = db.Column(db.String(50), default=func.now())
     worn_to_most = db.Column(db.String(50))
-    user_id = db.Column(db.Integer)
+    user_id = db.Column(db.String(50))
 
 class Pants(db.Model):
     pants_id = db.Column(db.Integer, primary_key=True)
@@ -22,7 +22,7 @@ class Pants(db.Model):
     times_worn = db.Column(db.Integer, nullable=False)
     last_time_worn = db.Column(db.String(50), default=func.now())
     worn_to_most = db.Column(db.String(50))
-    user_id = db.Column(db.Integer)
+    user_id = db.Column(db.String(50))
 
 class Pants_Type(db.Model):
     pants_typeID = db.Column(db.Integer, primary_key=True)
@@ -37,7 +37,7 @@ class Shoes(db.Model):
     times_worn = db.Column(db.Integer, nullable=False)
     last_time_worn = db.Column(db.String(50), default=func.now())
     worn_to_most = db.Column(db.String(50))
-    user_id = db.Column(db.Integer)
+    user_id = db.Column(db.String(50))
 
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
