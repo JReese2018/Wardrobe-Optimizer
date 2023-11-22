@@ -6,59 +6,81 @@
 {%block content%} 
 
 <div class="container-fluid">
-    <div class="card mt-5">
-      <p style="text-align: center" class="mt-4"><strong>Adding New Shirt</strong></p>
-      <i class="fas fa-tshirt" style="color: #000000" id="addNewShirt"></i><div class="card-body">
-        <div class="mb-2">
-          <div class="mb-3">
-            <label for="brand" class="form-label">Brand of Shirt</label>
-            <input type="text" class="form-control" placeholder="Enter Here" id="brand" name="brand">
-          </div>
-          <div class="mb-3">
-            <label for="primary_color" class="form-label">Primary Color</label>
-            <input type="text" class="form-control" placeholder="Enter Here" id="primary_color" name="primary_color">
-          </div>
-          <div class="mb-3">
-            <label for="secondary_color" class="form-label">Secondary Color (If any)</label>
-            <input type="text" class="form-control" placeholder="Leave Blank is N/A" id="secondary_color" name="secondary_color">
-          </div>
-          <div class="mb-3">
-            <label for="type" class="form-label">Type of Shirt</label>
-            <select class="form-select mb-3" id="type" name="type">
-              <option selected>Select Here</option>
-             <!--figure out how to add the options from the database to this option--> 
-            </select>
-          </div>
-          <div>
-            <label for="goingTo" class="form-label">Where would you wear this? (Can not be changed)</label>
-              <div class="form-group">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Work
-                </label>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                  School
-                </label>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Errands
-                </label>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Going Out
-                </label>
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                  Exercise
-                </label>
-              </div>
-            </div>
+  <div class="card mt-5 mb-5">
+    <p style="text-align: center" class="mt-4"><strong>Adding New Shirt</strong></p>
+    <i class="fas fa-tshirt" style="color: #000000" id="addNewShirt"></i>
+    <div class="card-body">
+      <form method="post">
+      <div class="mb-2">
+        <div class="mb-3">
+          <label for="brand" class="form-label">Name of Shirt</label>
+          <input type="text" class="form-control" placeholder="Enter Here" id="shirt_name" name="shirt_name">
         </div>
-        <div class="container-fluid" id="container">
-          <button href="#" class="btn" role="button" id="addNew">Add Shirt</button>
+        <div class="mb-3">
+          <label for="brand" class="form-label">Brand of Shirt</label>
+          <input type="text" class="form-control" placeholder="Enter Here" id="brand" name="brand">
+        </div>
+        <div class="mb-3">
+          <label for="primary_color" class="form-label">Primary Color</label>
+          <input type="text" class="form-control" placeholder="Enter Here" id="primary_color" name="primary_color">
+        </div>
+        <div class="mb-3">
+          <label for="type" class="form-label">Type of Shirt</label>
+          <select class="form-select mb-3" id="type" name="type">
+            <option selected>Short Sleeve</option>
+            <option>Long Sleeve</option>
+            <option>Sleeveless</option>
+            <option>Sweatshirt</option>
+            <option>Polo</option>
+            <option>Dress Shirt</option>
+            <option>Flannel</option>
+            <option>Tank Top</option>
+            <option>Beach Top</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="type" class="form-label">Would you wear these to work?</label>
+          <select class="form-select mb-3" id="wear_to_work" name="wear_to_work">
+            <option selected>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="type" class="form-label">Would you wear these to school?</label>
+          <select class="form-select mb-3" id="wear_to_school" name="wear_to_school">
+            <option selected>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="type" class="form-label">Would you wear these to run errands?</label>
+          <select class="form-select mb-3" id="wear_to_errands" name="wear_to_errands">
+            <option selected>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="type" class="form-label">Would you wear these to go out?</label>
+          <select class="form-select mb-3" id="wear_to_going_out" name="wear_to_going_out">
+            <option selected>Yes</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="type" class="form-label">Would you wear these to exercise?</label>
+          <select class="form-select mb-3" id="wear_to_exercise" name="wear_to_exercise">
+            <option selected>Yes</option>
+            <option>No</option>
+          </select>
         </div>
       </div>
+      <div class="container-fluid" id="container">
+        <button type="submit" class="btn" role="button" id="addNew">Add Shirt</button>
+      </div>
+    </form>
     </div>
   </div>
+</div>
+
   {% endblock %}

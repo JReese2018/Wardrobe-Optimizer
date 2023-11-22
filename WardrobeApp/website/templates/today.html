@@ -12,20 +12,21 @@
     </p>
     <p style="text-align: center">Today's Date: {{ date_time }}</p>
   </div>
+  <form method="post">
   <!--Shirt Button-->
   <p style="text-align: center">What shirt did you wear today?</p>
   <div class="container-fluid" id="container">
     <div class="row">
-      <i class="fas fa-tshirt" style="color: #000000" id="shirt"></i>
+      <i class="fas fa-tshirt" style="color: #000000" id="homePageShirt"></i>
       <select
         class="form-select mb-3"
         aria-label="Default select example"
-        id="select-variant1"
+        id="shirt_today" name="shirt_today"
       >
         <option selected>Select One</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+        {% for shirt in shirts_list %} 
+        <option value="{{ shirt.shirt_id }}">{{ shirt.shirt_name }}</option>
+        {% endfor %}
       </select>
     </div>
   </div>
@@ -40,7 +41,7 @@
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         class="col-lg-6"
-        id="pants"
+        id="homePagePants"
       >
         <path
           d="M6 36L8.00001 12H40L42 36H26.8421L24 25L21.1579 36H6Z"
@@ -75,12 +76,12 @@
       <select
         class="form-select mb-3"
         aria-label="Default select example"
-        id="select-variant2"
+        id="pants_today" name="pants_today"
       >
         <option selected>Select One</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+        {% for pants in pants_list %} 
+        <option value="{{ pants.pants_id }}">{{ pants.pants_name }}</option>
+        {% endfor %}
       </select>
     </div>
   </div>
@@ -88,16 +89,16 @@
   <p style="text-align: center">What shoes did you wear today?</p>
   <div class="container-fluid" id="container">
     <div class="row">
-      <i class="fas fa-shoe-prints" style="color: #000000" id="shoes"></i>
+      <i class="fas fa-shoe-prints" style="color: #000000" id="homePageShoes"></i>
       <select
         class="form-select mb-3"
         aria-label="Default select example"
-        id="select-variant3"
+        id="shoes_today" name="shoes_today"
       >
-        <option selected>Select One</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+      <option selected>Select One</option>
+      {% for shoes in shoes_list %} 
+        <option value="{{ shoes.shoes_id }}">{{ shoes.shoe_name }}</option>
+      {% endfor %}
       </select>
     </div>
   </div>
@@ -105,23 +106,21 @@
   <p style="text-align: center">Where are you headed?</p>
   <div class="container-fluid" id="container">
     <div class="row">
-      <i class="fas fa-person-running" style="color: #000000" id="shoes"></i>
+      <i class="fas fa-person-running" style="color: #000000" id="homePageShoes"></i>
       <select
         class="form-select mb-3"
         aria-label="Default select example"
-        id="select-variant3"
+        id="where_to" name="where_to"
       >
-        <option selected>Select One</option>
-        <option value="1">Work</option>
-        <option value="2">School</option>
-        <option value="3">Errands</option>
-        <option value="4">Going Out</option>
-        <option value="5">Exercise</option>
+        <option selected>Work</option>
+        <option>School</option>
+        <option>Errands</option>
+        <option>Going Out</option>
+        <option>Exercise</option>
       </select>
     </div>
   </div>
   <!--Confirm Button-->
-
   <div class="container-fluid mb-3 mt-4" id="container">
     <div class="row">
       <i
@@ -129,11 +128,10 @@
         style="color: #000000"
         id="shoes"
       ></i>
-      <a href="#" class="btn btn-primary" role="button" id="confirm"
-        >Lock In!</a
-      >
+      <button type="sumbit" class="btn" role="button" id="confirm">Lock In!</button>
     </div>
   </div>
+</form>
 
   <!--Add New Button-->
   <p style="text-align: center">Adding to your virtual closet?</p>
@@ -141,7 +139,7 @@
     <div class="row">
       <i class="fa-solid fa-plus" style="color: #000000" id="shoes"></i>
       <a
-        href="addnew.html"
+        href="/addnew"
         class="btn btn-primary"
         role="button"
         id="homeAddNewButton"

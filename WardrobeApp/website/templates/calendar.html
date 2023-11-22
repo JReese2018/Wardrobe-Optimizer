@@ -3,8 +3,32 @@
 <!--Change Title of Page-->
 {% block title %}Add New • Wardrobe Optimizer{% endblock %}
 <!--Add Content-->
-{%block content%} 
+{%block content%}
 
-<!--Have not started on this-->
+<div class="container mt-5">
+    <h2>Wardrobe Calandar</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Where To</th>
+            <th>Shirt</th>
+            <th>Pants</th>
+            <th>Shoes</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for date, where_to, shirt_name, pants_name, shoe_name in zip(dates_of_outfits, where_to, shirt_names, pants_names, shoe_names) %}
+        <tr>
+            <td>{{ date }}</td>
+            <td>{{ where_to }}</td>
+            <td>{{ shirt_name }}</td>
+            <td>{{ pants_name }}</td>
+            <td>{{ shoe_name }}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 {% endblock %}

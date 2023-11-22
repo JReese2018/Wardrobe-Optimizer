@@ -1,0 +1,162 @@
+<!--Add Nav Bar-->
+{% extends "base.html"%} 
+<!--Change Title of Page-->
+{% block title %}Random • Wardrobe Optimizer{% endblock %}
+<!--Add Content-->
+{%block content%} 
+
+<form method="post">
+    <h2 class="mt-5" style="text-align:center">Here's a combo you haven't worn here</h2>
+    <h4 class="mt-5" style="text-align:center">Click Below if you want us to add it to your Calander</h4>
+    <div class="container-fluid mt-4">
+        <div class="row">
+            <button href="#" class="btn btn-primary" role="button" id="randomButtonCalender">Add to Calendar</button> 
+        </div>
+    </div>
+{% for shirt in random_shirt_from_database %}
+<div class="container-fluid mt-3 mb-5" id="container">
+  <div class="card shadow-0 border rounded-3">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mt-4">
+          <i
+            class="fas fa-tshirt"
+            style="color: #000000"
+            id="shirtCollectionIcon"
+          ></i>
+        </div>
+        <div class="col-lg">
+            
+            <input value="{{ shirt.shirt_id }}" name="shirt_today" hidden=true>
+            
+          <h5>{{ shirt.shirt_name }}</h5>
+          <div class="mt-2 mb-0 text-muted small">
+            <span>{{ shirt.brand }}</span>
+            <span class="text-primary"> • </span>
+            <span>{{ shirt.type }}</span>
+            <span class="text-primary"> • </span>
+            <span>{{ shirt.primary_color }}</span>
+          </div>
+          <div class="mt-2 mb-0 text-muted small">
+            <span>Time's Worn: {{ shirt.times_worn }}</span>
+            <span class="text-primary"> • </span>
+            <span>Last Time Worn: {{ shirt.last_time_worn }}</span>
+            <span class="text-primary"> • </span>
+            <span>Worn to Most Frequently: {{ shirt.worn_to_most }}<br /></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
+{% for pants in random_pants_from_database %}
+<div class="container-fluid mt-3 mb-5" id="container">
+  <div class="card shadow-0 border rounded-3">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mt-4">
+          <?xml version="1.0" encoding="UTF-8"?><svg
+          width="75"
+          height="65"
+          viewBox="0 0 48 48"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="col-lg-6"
+          id="pantsCollectionIcon"
+        >
+          <path
+            d="M6 36L8.00001 12H40L42 36H26.8421L24 25L21.1579 36H6Z"
+            fill="none"
+            stroke="#333"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M24 12L27 19"
+            stroke="#333"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M24 12L20 19.5"
+            stroke="#333"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M18 12H30"
+            stroke="#333"
+            stroke-width="1"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+        </div>
+        <div class="col-lg">
+            <input value="{{ pants.pants_id }}" name="pants_today" hidden=true>
+          <h5>{{ pants.pants_name }}</h5>
+          <div class="mt-2 mb-0 text-muted small">
+            <span>{{ pants.brand }}</span>
+            <span class="text-primary"> • </span>
+            <span>{{ pants.type }}</span>
+            <span class="text-primary"> • </span>
+            <span>{{ pants.primary_color }}</span>
+          </div>
+          <div class="mt-2 mb-0 text-muted small">
+            <span>Time's Worn: {{ pants.times_worn }}</span>
+            <span class="text-primary"> • </span>
+            <span>Last Time Worn: {{ pants.last_time_worn }}</span>
+            <span class="text-primary"> • </span>
+            <span>Worn to Most Frequently: {{ pants.worn_to_most }}<br /></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+
+
+{% for shoes in random_shoes_from_database %}
+<div class="container-fluid mt-3 mb-5" id="container">
+  <div class="card shadow-0 border rounded-3">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mt-4">
+          <i class="fas fa-shoe-prints" style="color: #000000" id="shoeCollectionIcon"></i>
+        </div>
+        <div class="col-lg">
+            <input value="{{ shoes.shoes_id }}" name="shoes_today" hidden=true>
+          <h5>{{ shoes.shoe_name }}</h5>
+          <div class="mt-2 mb-0 text-muted small">
+            <span>{{ shoes.brand }}</span>
+            <span class="text-primary"> • </span>
+            <span>{{ shoes.type }}</span>
+            <span class="text-primary"> • </span>
+            <span>{{ shoes.primary_color }}</span>
+          </div>
+          <div class="mt-2 mb-0 text-muted small">
+            <span>Time's Worn: {{ shoes.times_worn }}</span>
+            <span class="text-primary"> • </span>
+            <span>Last Time Worn: {{ shoes.last_time_worn }}</span>
+            <span class="text-primary"> • </span>
+            <span>Worn to Most Frequently: {{ shoes.worn_to_most }}<br /></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+</form>
+
+<!--Must add a "no" type button-->
+
+{% endblock %}

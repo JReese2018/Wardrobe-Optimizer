@@ -1,0 +1,188 @@
+<!--Add Nav Bar-->
+{% extends "base.html"%} 
+<!--Change Title of Page-->
+{% block title %}Are you sure? • Wardrobe Optimizer{% endblock %}
+<!--Add Content-->
+{%block content%} 
+
+
+<i class="fa-solid fa-triangle-exclamation" style="color: #ea1010;" id="warningSign"></i>
+
+{% if where_to == "Work" %}
+<h3 style="text-align: center">It looks like you worn this work before. Are you sure you want to wear this to work again?</h3>
+{% elif where_to == "School" %}
+<h3 style="text-align: center">It looks like you worn this school before. Are you sure you want to wear this to school again?</h3>
+{% elif where_to == "Errands" %}
+<h3 style="text-align: center">It looks like you worn this run errands before. Are you sure you want to run errands in this again?</h3>
+{% elif where_to == "Going Out" %}
+<h3 style="text-align: center">It looks like you worn this out before. Are you sure you want to hit the streets with this fit again?</h3>
+{% elif where_to == "Exercise" %}
+<h3 style="text-align: center">It looks like you've worked out in this before. Are you sure you want to work out in this again?</h3>
+{% endif %}
+
+
+<form method="post">
+    {% for shirt in last_shirt_from_database %}
+    <div class="container-fluid mt-3 mb-5" id="container">
+      <div class="card shadow-0 border rounded-3">
+        <div class="card-body" id="shirtWornBeforeCard">
+          <div class="row">
+            <div class="col-md-12 col-lg-3 col-xl-3 mb-2 mt-4">
+              <i
+                class="fas fa-tshirt"
+                style="color: #000000"
+                id="shirtWornBeforeIcon"
+              ></i>
+            </div>
+            <div class="col-lg" id="shirtWornBeforeContent">
+                
+                <input value="{{ shirt.shirt_id }}" name="shirt_today" hidden=true>
+                
+              <h5>{{ shirt.shirt_name }}</h5>
+              <div class="mt-2 mb-0 text-muted small">
+                <span>• {{ shirt.brand }}</span>
+              </div>
+
+              <div class="mt-2 mb-0 text-muted small">
+                <span>• {{ shirt.type }}</span>
+              </div>
+
+              <div class="mt-2 mb-0 text-muted small">
+                <span>• {{ shirt.primary_color }}</span>
+              </div>
+
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+    {% for pants in last_pants_from_database %}
+    <div class="container-fluid mt-3 mb-5" id="container">
+      <div class="card shadow-0 border rounded-3">
+        <div class="card-body" id="shirtWornBeforeCard">
+          <div class="row">
+            <div class="col-md-12 col-lg-3 col-xl-3 mb-2 mt-4">
+                <?xml version="1.0" encoding="UTF-8"?><svg
+                width="75"
+                height="65"
+                viewBox="0 0 48 48"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="col-lg-6"
+                id="pantsWornBeforeIcon"
+              >
+                <path
+                  d="M6 36L8.00001 12H40L42 36H26.8421L24 25L21.1579 36H6Z"
+                  fill="none"
+                  stroke="#333"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M24 12L27 19"
+                  stroke="#333"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M24 12L20 19.5"
+                  stroke="#333"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M18 12H30"
+                  stroke="#333"
+                  stroke-width="1"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <div class="col-lg" id="shirtWornBeforeContent">
+                
+                <input value="{{ pants.pants_id }}" name="pants_today" hidden=true>
+                
+              <h5>{{ pants.pants_name }}</h5>
+              <div class="mt-2 mb-0 text-muted small">
+                <span>• {{ pants.brand }}</span>
+              </div>
+
+              <div class="mt-2 mb-0 text-muted small">
+                <span>• {{ pants.type }}</span>
+              </div>
+
+              <div class="mt-2 mb-0 text-muted small">
+                <span>• {{ pants.primary_color }}</span>
+              </div>
+
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+    {% for shoes in last_shoes_from_database %}
+    <div class="container-fluid mt-3 mb-5" id="container">
+      <div class="card shadow-0 border rounded-3">
+        <div class="card-body" id="shirtWornBeforeCard">
+          <div class="row">
+            <div class="col-md-12 col-lg-3 col-xl-3 mb-2 mt-4">
+                <i class="fas fa-shoe-prints" style="color: #000000" id="shoesWornBeforeIcon"></i>
+            </div>
+            <div class="col-lg" id="shoesWornBeforeContent">
+                
+                <input value="{{ shoes.shoes_id }}" name="shoes_today" hidden=true>
+                
+              <h5>{{ shoes.shoe_name }}</h5>
+              <div class="mt-2 mb-0 text-muted small">
+                <span>• {{ shoes.brand }}</span>
+              </div>
+
+              <div class="mt-2 mb-0 text-muted small">
+                <span>• {{ shoes.type }}</span>
+              </div>
+
+              <div class="mt-2 mb-0 text-muted small">
+                <span>• {{ shoes.primary_color }}</span>
+              </div>
+
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+
+  <!--Confirm/No Buttons-->
+  <div class="container-fluid mb-3 mt-4" id="container">
+    <div class="row">
+      <button type="sumbit" class="btn" role="button" id="confirm">Lock In!</button>
+    </div>
+  </div>
+</form>
+
+  <div class="container-fluid mb-3 mt-4" id="container">
+    <div class="row">
+      <a href="/today" class="btn" id="noButton">No!</a>
+    </div>
+  </div>
+  <!--Adding Location to Database-->
+  {% for location in worn_this_outfit_before %}
+  <input value="{{ location.where_to }}" name="where_to" hidden=true>
+  {% endfor %}
+
+
+{% endblock %}
