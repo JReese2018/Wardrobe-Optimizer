@@ -387,12 +387,13 @@ def randomconfirm():
 @views.route('/calendar')
 @login_required
 def calendar():
-
+    
     all_outfits = Todays_Outfit.query.filter_by(user_id=current_user.id)
     shirts = Shirt.query.filter_by(user_id=current_user.id)  
     pants = Pants.query.filter_by(user_id=current_user.id)
     shoes = Shoes.query.filter_by(user_id=current_user.id)      
 
+    outfit_ids = []
     dates_of_outfits = []
     where_to = []
     shirt_names = []
@@ -400,6 +401,10 @@ def calendar():
     shoe_names = []
 
     for x in all_outfits:
+        outfit_id = x.outfit_id
+        if outfit_id:
+            outfit_ids.append(outfit_id)
+
         current_date = x.date
         if current_date:
             dates_of_outfits.append(current_date)
@@ -428,13 +433,13 @@ def calendar():
         for y in find_shoes:
             shoe_name = y.shoe_name        
         if find_shoes:
-            shoe_names.append(shoe_name)
-
-        
+            shoe_names.append(shoe_name)   
 
 
-    return render_template("calendar.html", user=current_user, all_outfits=all_outfits, shirts=shirts, pants=pants, shoes=shoes, dates_of_outfits=dates_of_outfits, where_to=where_to, shirt_names=shirt_names, pants_names=pants_names, shoe_names=shoe_names, zip=zip)
+    return render_template("calendar.html", user=current_user, all_outfits=all_outfits, shirts=shirts, pants=pants, shoes=shoes, dates_of_outfits=dates_of_outfits, where_to=where_to, shirt_names=shirt_names, pants_names=pants_names, shoe_names=shoe_names, outfit_id=outfit_id, outfit_ids=outfit_ids, zip=zip)
 
+
+    
 @views.route('/addnew')
 @login_required
 def addnew():

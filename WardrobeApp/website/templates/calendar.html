@@ -4,7 +4,6 @@
 {% block title %}Add New • Wardrobe Optimizer{% endblock %}
 <!--Add Content-->
 {%block content%}
-
 <div class="container mt-5">
     <h2>Wardrobe Calandar</h2>
     <table class="table">
@@ -18,17 +17,20 @@
         </tr>
         </thead>
         <tbody>
-        {% for date, where_to, shirt_name, pants_name, shoe_name in zip(dates_of_outfits, where_to, shirt_names, pants_names, shoe_names) %}
+        {% for date, where_to, shirt_name, pants_name, shoe_name, outfit_id in zip(dates_of_outfits, where_to, shirt_names, pants_names, shoe_names, outfit_ids) %}
         <tr>
             <td>{{ date }}</td>
             <td>{{ where_to }}</td>
             <td>{{ shirt_name }}</td>
             <td>{{ pants_name }}</td>
             <td>{{ shoe_name }}</td>
+            <!--<td><a href="#" onclick()>{{ outfit_id }}</i></a></td>-->
+            <td><button id="{{ outfit_id }}" name="forwardBtn" onclick="move_forward()">Forward</button></td> 
         </tr>
         {% endfor %}
         </tbody>
     </table>
 </div>
+
 
 {% endblock %}
